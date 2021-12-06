@@ -1,14 +1,15 @@
 import React, { Component } from "react";
 import GifList from "../components/GifList";
+import GifSearch from "../components/GifSearch";
 
 export default class GifListContainer extends Component {
   state = {
     gifs: [],
   };
 
-  handleClick = () => {
+  handleClick = (search) => {
     fetch(
-      "https://api.giphy.com/v1/gifs/search?q=dolphin&api_key=VJIA5LPs4ZaSdw9uyJoBT49SZxwfcjVw&rating=g"
+      `https://api.giphy.com/v1/gifs/search?q=${search}&api_key=VJIA5LPs4ZaSdw9uyJoBT49SZxwfcjVw&rating=g`
     )
       .then((resp) => resp.json())
       .then((data) => {
@@ -25,9 +26,8 @@ export default class GifListContainer extends Component {
   render() {
     return (
       <div>
-        <button className="btn btn-primary" onClick={this.handleClick}>
-          Fetch!
-        </button>
+        <GifSearch handleClick={this.handleClick} />
+
         <GifList gifs={this.state.gifs} />
       </div>
     );

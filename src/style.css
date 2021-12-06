@@ -1,0 +1,24 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.gifs {
+  display: grid;
+  width: 90vw;
+  max-width: 1200px;
+  margin: 5rem auto;
+  gap: 2rem;
+}
+
+@media screen and (min-width: 770px) {
+  .gifs {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.searchbar {
+  margin-left: 5rem;
+  margin-right: 5rem;
+}
