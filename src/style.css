@@ -7,14 +7,15 @@
 .gifs {
   display: grid;
   width: 90vw;
-  max-width: 1200px;
+  justify-content: center;
+  grid-template-columns: repeat(3, minmax(min-content, 200px));
   margin: 5rem auto;
   gap: 2rem;
 }
 
 @media screen and (min-width: 770px) {
   .gifs {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr 1fr;
   }
 }
 
